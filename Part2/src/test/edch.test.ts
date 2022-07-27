@@ -4,7 +4,7 @@ import {
   encrypt,
   genKeypair,
   genEcdhSharedKey,
-  EdDSA
+  EdDSA,
 } from '../index';
 
 describe('ECDH test', () => {
@@ -29,7 +29,6 @@ describe('ECDH test', () => {
     //console.log('plaintext:', aliceMessage);
     // Alice encrypt with her private key and bob pubkey
     const ciphertext = await encrypt(aliceMessage, ecdhSharedKey);
-
     // decrypting using bob's private key + alice pubkey
     const ecdhbobSharedKey = await genEcdhSharedKey({
       eddsa,
